@@ -1,0 +1,4 @@
+# Runtime: stdlib only. No dependencies.
+# Tests and dashboard:
+pytest>=7.0
+streamlit>=1.30

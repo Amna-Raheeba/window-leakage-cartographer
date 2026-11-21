@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "window-leakage-cartographer"
+version = "0.1.0"
+description = "Maps sliding-window leakage in time-series ML: builds the window-overlap graph of a train/test split, finds the components that straddle it, and attributes the score inflation to each leakage component by removal replay."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.30"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
