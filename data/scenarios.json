@@ -1,0 +1,28 @@
+{
+ "configs": [
+  {
+   "length": 10,
+   "stride": 5
+  },
+  {
+   "length": 20,
+   "stride": 5
+  },
+  {
+   "length": 20,
+   "stride": 10
+  },
+  {
+   "length": 30,
+   "stride": 10
+  },
+  {
+   "length": 20,
+   "stride": 20
+  }
+ ],
+ "label": "remaining_useful_life_at_window_end",
+ "n_units": 24,
+ "predictor": "knn_regressor_k3",
+ "test_fraction": 0.25
+}

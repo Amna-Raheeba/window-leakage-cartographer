@@ -1,0 +1,130 @@
+{
+ "demo_geometry": {
+  "length": 20,
+  "stride": 5
+ },
+ "n_units": 24,
+ "seed": 7,
+ "units": [
+  {
+   "lifetime": 131,
+   "n_windows_demo_geometry": 23,
+   "unit_id": 0
+  },
+  {
+   "lifetime": 161,
+   "n_windows_demo_geometry": 29,
+   "unit_id": 1
+  },
+  {
+   "lifetime": 123,
+   "n_windows_demo_geometry": 21,
+   "unit_id": 2
+  },
+  {
+   "lifetime": 121,
+   "n_windows_demo_geometry": 21,
+   "unit_id": 3
+  },
+  {
+   "lifetime": 124,
+   "n_windows_demo_geometry": 21,
+   "unit_id": 4
+  },
+  {
+   "lifetime": 119,
+   "n_windows_demo_geometry": 20,
+   "unit_id": 5
+  },
+  {
+   "lifetime": 147,
+   "n_windows_demo_geometry": 26,
+   "unit_id": 6
+  },
+  {
+   "lifetime": 156,
+   "n_windows_demo_geometry": 28,
+   "unit_id": 7
+  },
+  {
+   "lifetime": 97,
+   "n_windows_demo_geometry": 16,
+   "unit_id": 8
+  },
+  {
+   "lifetime": 120,
+   "n_windows_demo_geometry": 21,
+   "unit_id": 9
+  },
+  {
+   "lifetime": 127,
+   "n_windows_demo_geometry": 22,
+   "unit_id": 10
+  },
+  {
+   "lifetime": 147,
+   "n_windows_demo_geometry": 26,
+   "unit_id": 11
+  },
+  {
+   "lifetime": 168,
+   "n_windows_demo_geometry": 30,
+   "unit_id": 12
+  },
+  {
+   "lifetime": 140,
+   "n_windows_demo_geometry": 25,
+   "unit_id": 13
+  },
+  {
+   "lifetime": 146,
+   "n_windows_demo_geometry": 26,
+   "unit_id": 14
+  },
+  {
+   "lifetime": 170,
+   "n_windows_demo_geometry": 31,
+   "unit_id": 15
+  },
+  {
+   "lifetime": 121,
+   "n_windows_demo_geometry": 21,
+   "unit_id": 16
+  },
+  {
+   "lifetime": 144,
+   "n_windows_demo_geometry": 25,
+   "unit_id": 17
+  },
+  {
+   "lifetime": 136,
+   "n_windows_demo_geometry": 24,
+   "unit_id": 18
+  },
+  {
+   "lifetime": 106,
+   "n_windows_demo_geometry": 18,
+   "unit_id": 19
+  },
+  {
+   "lifetime": 160,
+   "n_windows_demo_geometry": 29,
+   "unit_id": 20
+  },
+  {
+   "lifetime": 139,
+   "n_windows_demo_geometry": 24,
+   "unit_id": 21
+  },
+  {
+   "lifetime": 134,
+   "n_windows_demo_geometry": 23,
+   "unit_id": 22
+  },
+  {
+   "lifetime": 157,
+   "n_windows_demo_geometry": 28,
+   "unit_id": 23
+  }
+ ]
+}
