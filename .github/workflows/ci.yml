@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install pytest streamlit
+      - run: pytest -q
+      - run: python -m window_leakage demo
+      - run: python -m window_leakage evaluate --out /tmp/window_leakage_results
+      - run: python notebooks/01_demo_run.py
+      - run: python notebooks/02_evaluation_experiment.py
