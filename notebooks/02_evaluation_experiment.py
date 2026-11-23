@@ -1,6 +1,6 @@
 """Notebook 02 - the headline evaluation experiment.
 
-Runs the full seeded evaluation (4 seeds x 4 window geometries) and
+Runs the full seeded evaluation (24 seeds x 5 window geometries) and
 prints the summary: leaked fraction, graph detection vs the
 exact-duplicate baseline, score inflation, per-component replay
 recovery, and the per-geometry breakdown. Runnable as a plain
