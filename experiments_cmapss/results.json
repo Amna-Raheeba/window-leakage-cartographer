@@ -1,0 +1,859 @@
+{
+  "source_url": "https://phm-datasets.s3.amazonaws.com/NASA/6.+Turbofan+Engine+Degradation+Simulation+Data+Set.zip (NASA Prognostics Data Repository mirror; CMAPSSData.zip inside)",
+  "data_file": "data/train_FD001.txt",
+  "data_md5": "259f340bac32ce6fa8894815600fa757",
+  "data_sha256": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8",
+  "data_rows": 20631,
+  "data_cols": 26,
+  "data_units": 100,
+  "rul_cap": 125,
+  "split_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "geometries": [
+    {
+      "window_length": 30,
+      "stride": 5,
+      "n_windows": 3586,
+      "n_edges": 16430,
+      "n_near_duplicate_edges": 0,
+      "equivalence_check_seed0": {
+        "rmse_leaky": 0.0,
+        "rmse_purged": 0.0,
+        "rmse_louo": 0.0,
+        "recovered_share": 0.0,
+        "leaked_fraction": 0.0
+      },
+      "per_seed": [
+        {
+          "seed": 0,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2464,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9847919054542399,
+            "rmse_leaky": 11.311033733792156,
+            "rmse_purged": 27.868806700409003,
+            "rmse_louo": 22.827472527288844,
+            "optimism_rmse": 11.516438793496688,
+            "recovered_se_gain": 350503.7777777773,
+            "louo_se_gain": 352266.0,
+            "recovered_share": 0.9949974671917735
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2464,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9847919054542399,
+            "rmse_leaky": 20.32141133512866,
+            "rmse_purged": 25.783543042733395,
+            "rmse_louo": 21.032883930973465,
+            "optimism_rmse": 0.7114725958448069,
+            "recovered_se_gain": 26234.55838474067,
+            "louo_se_gain": 26362.513230866436,
+            "recovered_share": 0.9951463335454698
+          }
+        },
+        {
+          "seed": 1,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2453,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9859108607264994,
+            "rmse_leaky": 12.086047519468767,
+            "rmse_purged": 26.90305152854633,
+            "rmse_louo": 23.607808475835828,
+            "optimism_rmse": 11.52176095636706,
+            "recovered_se_gain": 368863.6666666664,
+            "louo_se_gain": 368485.44444444444,
+            "recovered_share": 1.0010264237785353
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2453,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9859108607264994,
+            "rmse_leaky": 21.191699515019593,
+            "rmse_purged": 24.14107685767512,
+            "rmse_louo": 21.926678529693078,
+            "optimism_rmse": 0.7349790146734847,
+            "recovered_se_gain": 28082.11330077493,
+            "louo_se_gain": 28395.228296621113,
+            "recovered_share": 0.9889729713536608
+          }
+        },
+        {
+          "seed": 2,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2471,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9876424267936413,
+            "rmse_leaky": 11.632299508913935,
+            "rmse_purged": 29.05586948599717,
+            "rmse_louo": 23.268164733802386,
+            "optimism_rmse": 11.635865224888452,
+            "recovered_se_gain": 363696.55555555463,
+            "louo_se_gain": 363863.0,
+            "recovered_share": 0.9995425628754631
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2471,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9876424267936413,
+            "rmse_leaky": 20.6349676851146,
+            "rmse_purged": 26.482356580351865,
+            "rmse_louo": 21.41673348092884,
+            "optimism_rmse": 0.7817657958142412,
+            "recovered_se_gain": 29295.74798807541,
+            "louo_se_gain": 29455.625138163497,
+            "recovered_share": 0.9945722710233386
+          }
+        },
+        {
+          "seed": 3,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2495,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9889284031290486,
+            "rmse_leaky": 10.686690654400788,
+            "rmse_purged": 25.133603813910238,
+            "rmse_louo": 22.07781546068073,
+            "optimism_rmse": 11.39112480627994,
+            "recovered_se_gain": 333742.22222222155,
+            "louo_se_gain": 334409.22222222225,
+            "recovered_share": 0.9980054377819836
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2495,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9889284031290486,
+            "rmse_leaky": 20.200623991603386,
+            "rmse_purged": 24.096086002214026,
+            "rmse_louo": 20.965895323271052,
+            "optimism_rmse": 0.765271331667666,
+            "recovered_se_gain": 28263.27173709965,
+            "louo_se_gain": 28227.187122370193,
+            "recovered_share": 1.0012783638190028
+          }
+        },
+        {
+          "seed": 4,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2474,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9874133831567964,
+            "rmse_leaky": 11.860313600005533,
+            "rmse_purged": 25.01888423675966,
+            "rmse_louo": 22.277356889009916,
+            "optimism_rmse": 10.417043289004383,
+            "recovered_se_gain": 318125.6666666664,
+            "louo_se_gain": 318629.77777777775,
+            "recovered_share": 0.9984178782202117
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2474,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9874133831567964,
+            "rmse_leaky": 21.260359501029615,
+            "rmse_purged": 23.58663462421298,
+            "rmse_louo": 22.018293880706242,
+            "optimism_rmse": 0.7579343796766267,
+            "recovered_se_gain": 29101.190156809895,
+            "louo_se_gain": 29390.93185649664,
+            "recovered_share": 0.9901417994808251
+          }
+        },
+        {
+          "seed": 5,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2495,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9882589952320735,
+            "rmse_leaky": 10.512747364169709,
+            "rmse_purged": 25.91484117365097,
+            "rmse_louo": 22.226188882087325,
+            "optimism_rmse": 11.713441517917616,
+            "recovered_se_gain": 343155.1111111101,
+            "louo_se_gain": 343603.1111111111,
+            "recovered_share": 0.9986961701290994
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2495,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9882589952320735,
+            "rmse_leaky": 20.600826384720847,
+            "rmse_purged": 24.427133683855534,
+            "rmse_louo": 21.36596054192652,
+            "optimism_rmse": 0.7651341572056722,
+            "recovered_se_gain": 28671.546506540046,
+            "louo_se_gain": 28770.759042592304,
+            "recovered_share": 0.9965516190968273
+          }
+        },
+        {
+          "seed": 6,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2463,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9878833486769765,
+            "rmse_leaky": 12.086278376737813,
+            "rmse_purged": 27.344035996236766,
+            "rmse_louo": 23.35464853374849,
+            "optimism_rmse": 11.26837015701068,
+            "recovered_se_gain": 357498.55555555533,
+            "louo_se_gain": 357827.8888888889,
+            "recovered_share": 0.9990796320142732
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2463,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9878833486769765,
+            "rmse_leaky": 20.365701780374504,
+            "rmse_purged": 22.637568997952915,
+            "rmse_louo": 21.099730934780254,
+            "optimism_rmse": 0.73402915440575,
+            "recovered_se_gain": 27389.503931889238,
+            "louo_se_gain": 27271.40551562435,
+            "recovered_share": 1.0043304851375272
+          }
+        },
+        {
+          "seed": 7,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2440,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9892360840003225,
+            "rmse_leaky": 10.870888430932302,
+            "rmse_purged": 27.85195725290164,
+            "rmse_louo": 22.60734973199561,
+            "optimism_rmse": 11.736461301063306,
+            "recovered_se_gain": 353953.77777777764,
+            "louo_se_gain": 352052.7777777778,
+            "recovered_share": 1.0053997585589276
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2440,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9892360840003225,
+            "rmse_leaky": 20.254851580481656,
+            "rmse_purged": 23.468391390061438,
+            "rmse_louo": 20.985462322418417,
+            "optimism_rmse": 0.7306107419367613,
+            "recovered_se_gain": 26815.182861963553,
+            "louo_se_gain": 26997.032239119217,
+            "recovered_share": 0.9932640974924584
+          }
+        },
+        {
+          "seed": 8,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2500,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.988318343937798,
+            "rmse_leaky": 11.748242649738847,
+            "rmse_purged": 26.603771625138787,
+            "rmse_louo": 22.551632776209708,
+            "optimism_rmse": 10.80339012647086,
+            "recovered_se_gain": 333047.11111111095,
+            "louo_se_gain": 332017.22222222225,
+            "recovered_share": 1.0031019140573358
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2500,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.988318343937798,
+            "rmse_leaky": 21.166105790635143,
+            "rmse_purged": 25.030251633205438,
+            "rmse_louo": 21.90607553171135,
+            "optimism_rmse": 0.7399697410762052,
+            "recovered_se_gain": 28571.020430786855,
+            "louo_se_gain": 28557.411331172832,
+            "recovered_share": 1.0004765522846661
+          }
+        },
+        {
+          "seed": 9,
+          "knn": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2436,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9888938847161663,
+            "rmse_leaky": 12.108512354066102,
+            "rmse_purged": 24.085897457832175,
+            "rmse_louo": 23.292739454807023,
+            "optimism_rmse": 11.184227100740921,
+            "recovered_se_gain": 355666.4444444436,
+            "louo_se_gain": 354758.3333333333,
+            "recovered_share": 1.0025598020561706
+          },
+          "ridge": {
+            "n_train": 2690,
+            "n_test": 896,
+            "n_straddling": 100,
+            "n_sources": 2436,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9888938847161663,
+            "rmse_leaky": 20.66507075639473,
+            "rmse_purged": 24.55803341130505,
+            "rmse_louo": 21.398254931190564,
+            "optimism_rmse": 0.7331841747958343,
+            "recovered_se_gain": 27283.76083127948,
+            "louo_se_gain": 27632.78760114488,
+            "recovered_share": 0.9873691074927621
+          }
+        }
+      ],
+      "pooled": {
+        "knn": {
+          "leaked_fraction": {
+            "mean": 1.0,
+            "std_sample": 0.0
+          },
+          "mean_mass_leaked": {
+            "mean": 0.9877277635823563,
+            "std_sample": 0.0014046794653011399
+          },
+          "rmse_leaky": {
+            "mean": 11.490305419222596,
+            "std_sample": 0.6085597208383635
+          },
+          "rmse_purged": {
+            "mean": 26.578071927138275,
+            "std_sample": 1.5380217089048878
+          },
+          "rmse_louo": {
+            "mean": 22.809117746546587,
+            "std_sample": 0.5420997507233571
+          },
+          "optimism_rmse": {
+            "mean": 11.318812327323991,
+            "std_sample": 0.4236958950483913
+          },
+          "recovered_share": {
+            "mean": 1.0000827046663774,
+            "std_sample": 0.0029922124030487924
+          },
+          "n_straddling": {
+            "mean": 100.0,
+            "std_sample": 0.0
+          },
+          "recovered_share_pooled_by_se_gain": 1.0000977917310863,
+          "leaked_fraction_pooled": 1.0
+        },
+        "ridge": {
+          "leaked_fraction": {
+            "mean": 1.0,
+            "std_sample": 0.0
+          },
+          "mean_mass_leaked": {
+            "mean": 0.9877277635823563,
+            "std_sample": 0.0014046794653011399
+          },
+          "rmse_leaky": {
+            "mean": 20.66616183205027,
+            "std_sample": 0.4054460404443096
+          },
+          "rmse_purged": {
+            "mean": 24.421107622356775,
+            "std_sample": 1.1286126519837774
+          },
+          "rmse_louo": {
+            "mean": 21.411596940759978,
+            "std_sample": 0.40839944573891274
+          },
+          "optimism_rmse": {
+            "mean": 0.7454351087097049,
+            "std_sample": 0.02121392180360001
+          },
+          "recovered_share": {
+            "mean": 0.9952103600726538,
+            "std_sample": 0.005575829469306195
+          },
+          "n_straddling": {
+            "mean": 100.0,
+            "std_sample": 0.0
+          },
+          "recovered_share_pooled_by_se_gain": 0.9951861488600026,
+          "leaked_fraction_pooled": 1.0
+        }
+      }
+    },
+    {
+      "window_length": 20,
+      "stride": 5,
+      "n_windows": 3786,
+      "n_edges": 10758,
+      "n_near_duplicate_edges": 0,
+      "equivalence_check_seed0": null,
+      "per_seed": [
+        {
+          "seed": 0,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2260,
+            "leaked_fraction": 0.9978858350951374,
+            "mean_mass_leaked": 0.9319789045948094,
+            "rmse_leaky": 16.443023829335722,
+            "rmse_purged": 25.262576904825256,
+            "rmse_louo": 24.465229433969213,
+            "optimism_rmse": 8.022205604633491,
+            "recovered_se_gain": 311187.99999999977,
+            "louo_se_gain": 310453.0,
+            "recovered_share": 1.0023675081252228
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2260,
+            "leaked_fraction": 0.9978858350951374,
+            "mean_mass_leaked": 0.9319789045948094,
+            "rmse_leaky": 21.247294308915887,
+            "rmse_purged": 21.967101136497597,
+            "rmse_louo": 21.802602367059887,
+            "optimism_rmse": 0.555308058144,
+            "recovered_se_gain": 22088.65324481703,
+            "louo_se_gain": 22615.032982008408,
+            "recovered_share": 0.9767243435987847
+          }
+        },
+        {
+          "seed": 1,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2295,
+            "leaked_fraction": 0.9989429175475687,
+            "mean_mass_leaked": 0.9432591352513228,
+            "rmse_leaky": 15.724336452487778,
+            "rmse_purged": 24.87252914625045,
+            "rmse_louo": 23.935345238852882,
+            "optimism_rmse": 8.211008786365104,
+            "recovered_se_gain": 309289.8888888888,
+            "louo_se_gain": 308061.1111111111,
+            "recovered_share": 1.0039887468215178
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2295,
+            "leaked_fraction": 0.9989429175475687,
+            "mean_mass_leaked": 0.9432591352513228,
+            "rmse_leaky": 21.626929479877816,
+            "rmse_purged": 22.74782960064832,
+            "rmse_louo": 22.185106556185122,
+            "optimism_rmse": 0.558177076307306,
+            "recovered_se_gain": 22539.65943466265,
+            "louo_se_gain": 23134.310975869255,
+            "recovered_share": 0.9742956882603131
+          }
+        },
+        {
+          "seed": 2,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2248,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9366493789640592,
+            "rmse_leaky": 15.92577332655657,
+            "rmse_purged": 25.2464339846357,
+            "rmse_louo": 23.893185392455766,
+            "optimism_rmse": 7.967412065899197,
+            "recovered_se_gain": 298505.88888888917,
+            "louo_se_gain": 300122.3333333333,
+            "recovered_share": 0.9946140481233403
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2248,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9366493789640592,
+            "rmse_leaky": 20.977880513033895,
+            "rmse_purged": 22.028808000928926,
+            "rmse_louo": 21.531637631576082,
+            "optimism_rmse": 0.5537571185421868,
+            "recovered_se_gain": 21093.958053499002,
+            "louo_se_gain": 22268.791071343632,
+            "recovered_share": 0.9472430715218999
+          }
+        },
+        {
+          "seed": 3,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2241,
+            "leaked_fraction": 0.9989429175475687,
+            "mean_mass_leaked": 0.9361855158730159,
+            "rmse_leaky": 16.601245810535655,
+            "rmse_purged": 25.16108544583836,
+            "rmse_louo": 24.085213025689338,
+            "optimism_rmse": 7.483967215153683,
+            "recovered_se_gain": 286658.11111111107,
+            "louo_se_gain": 288053.3333333333,
+            "recovered_share": 0.995156375362587
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2241,
+            "leaked_fraction": 0.9989429175475687,
+            "mean_mass_leaked": 0.9361855158730159,
+            "rmse_leaky": 21.094897938584396,
+            "rmse_purged": 22.562377515793536,
+            "rmse_louo": 21.657976485155366,
+            "optimism_rmse": 0.5630785465709707,
+            "recovered_se_gain": 21974.698389246038,
+            "louo_se_gain": 22773.272167069128,
+            "recovered_share": 0.9649337270478919
+          }
+        },
+        {
+          "seed": 4,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2317,
+            "leaked_fraction": 0.9989429175475687,
+            "mean_mass_leaked": 0.9403862847222222,
+            "rmse_leaky": 16.287840601754734,
+            "rmse_purged": 25.673539070601038,
+            "rmse_louo": 24.44258540350065,
+            "optimism_rmse": 8.154744801745917,
+            "recovered_se_gain": 315237.2222222223,
+            "louo_se_gain": 314210.3333333334,
+            "recovered_share": 1.0032681576000224
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2317,
+            "leaked_fraction": 0.9989429175475687,
+            "mean_mass_leaked": 0.9403862847222222,
+            "rmse_leaky": 21.59627606533405,
+            "rmse_purged": 22.625064793243872,
+            "rmse_louo": 22.154640992948504,
+            "optimism_rmse": 0.5583649276144556,
+            "recovered_se_gain": 21873.353451708637,
+            "louo_se_gain": 23109.81284395307,
+            "recovered_share": 0.9464963476513846
+          }
+        },
+        {
+          "seed": 5,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2223,
+            "leaked_fraction": 0.9968287526427061,
+            "mean_mass_leaked": 0.9320993919008483,
+            "rmse_leaky": 16.311828762458166,
+            "rmse_purged": 25.648442685048025,
+            "rmse_louo": 23.8066387560424,
+            "optimism_rmse": 7.494809993584234,
+            "recovered_se_gain": 284033.5555555554,
+            "louo_se_gain": 284443.55555555556,
+            "recovered_share": 0.9985585892455908
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2223,
+            "leaked_fraction": 0.9968287526427061,
+            "mean_mass_leaked": 0.9320993919008483,
+            "rmse_leaky": 21.402807402054528,
+            "rmse_purged": 23.008712815319573,
+            "rmse_louo": 21.942361624848004,
+            "optimism_rmse": 0.5395542227934769,
+            "recovered_se_gain": 20880.43063874231,
+            "louo_se_gain": 22124.167260909475,
+            "recovered_share": 0.9437837995211379
+          }
+        },
+        {
+          "seed": 6,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2253,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9397401063689218,
+            "rmse_leaky": 15.960825309547689,
+            "rmse_purged": 24.526361343495353,
+            "rmse_louo": 23.42011697788235,
+            "optimism_rmse": 7.459291668334663,
+            "recovered_se_gain": 280091.2222222222,
+            "louo_se_gain": 277891.22222222225,
+            "recovered_share": 1.0079167667924418
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2253,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9397401063689218,
+            "rmse_leaky": 21.295841168514357,
+            "rmse_purged": 23.098996544709813,
+            "rmse_louo": 21.848970817754196,
+            "optimism_rmse": 0.553129649239839,
+            "recovered_se_gain": 21635.26284514305,
+            "louo_se_gain": 22575.982285577385,
+            "recovered_share": 0.958330963032545
+          }
+        },
+        {
+          "seed": 7,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2288,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9428886429704016,
+            "rmse_leaky": 15.839739440676048,
+            "rmse_purged": 25.672047613283205,
+            "rmse_louo": 23.773263892657578,
+            "optimism_rmse": 7.93352445198153,
+            "recovered_se_gain": 301392.88888888864,
+            "louo_se_gain": 297300.1111111111,
+            "recovered_share": 1.0137664858666935
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2288,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9428886429704016,
+            "rmse_leaky": 20.832686434946833,
+            "rmse_purged": 22.110649577181135,
+            "rmse_louo": 21.405026685370313,
+            "optimism_rmse": 0.5723402504234798,
+            "recovered_se_gain": 21893.45109888933,
+            "louo_se_gain": 22868.928766149187,
+            "recovered_share": 0.9573448464842932
+          }
+        },
+        {
+          "seed": 8,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2298,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9443720682478859,
+            "rmse_leaky": 16.184487391799177,
+            "rmse_purged": 25.046573953489347,
+            "rmse_louo": 24.026207208796567,
+            "optimism_rmse": 7.84171981699739,
+            "recovered_se_gain": 296657.1111111112,
+            "louo_se_gain": 298293.6666666667,
+            "recovered_share": 0.9945136094445334
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2298,
+            "leaked_fraction": 1.0,
+            "mean_mass_leaked": 0.9443720682478859,
+            "rmse_leaky": 21.211373204973363,
+            "rmse_purged": 22.516960567372934,
+            "rmse_louo": 21.7741453407433,
+            "optimism_rmse": 0.5627721357699365,
+            "recovered_se_gain": 22371.702993240127,
+            "louo_se_gain": 22884.73526687706,
+            "recovered_share": 0.977581900439133
+          }
+        },
+        {
+          "seed": 9,
+          "knn": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2286,
+            "leaked_fraction": 0.9978858350951374,
+            "mean_mass_leaked": 0.9340189271054026,
+            "rmse_leaky": 15.442524930444185,
+            "rmse_purged": 23.626940623625465,
+            "rmse_louo": 22.766230880383844,
+            "optimism_rmse": 7.32370594993966,
+            "recovered_se_gain": 265921.6666666669,
+            "louo_se_gain": 264718.8888888889,
+            "recovered_share": 1.0045436039068707
+          },
+          "ridge": {
+            "n_train": 2840,
+            "n_test": 946,
+            "n_straddling": 100,
+            "n_sources": 2286,
+            "leaked_fraction": 0.9978858350951374,
+            "mean_mass_leaked": 0.9340189271054026,
+            "rmse_leaky": 20.95524728975369,
+            "rmse_purged": 23.972778049955263,
+            "rmse_louo": 21.5200744085073,
+            "optimism_rmse": 0.5648271187536089,
+            "recovered_se_gain": 22253.111205553105,
+            "louo_se_gain": 22695.68804002155,
+            "recovered_share": 0.9804995189532036
+          }
+        }
+      ],
+      "pooled": {
+        "knn": {
+          "leaked_fraction": {
+            "mean": 0.9989429175475687,
+            "std_sample": 0.0011142627414265029
+          },
+          "mean_mass_leaked": {
+            "mean": 0.9381578355998889,
+            "std_sample": 0.004626854326937617
+          },
+          "rmse_leaky": {
+            "mean": 16.072162585559575,
+            "std_sample": 0.3557954756204347
+          },
+          "rmse_purged": {
+            "mean": 25.07365307710922,
+            "std_sample": 0.6285080634626637
+          },
+          "rmse_louo": {
+            "mean": 23.86140162102306,
+            "std_sample": 0.4934021605178338
+          },
+          "optimism_rmse": {
+            "mean": 7.789239035463487,
+            "std_sample": 0.32085673797000536
+          },
+          "recovered_share": {
+            "mean": 1.0018693891288821,
+            "std_sample": 0.006278117927798671
+          },
+          "n_straddling": {
+            "mean": 100.0,
+            "std_sample": 0.0
+          },
+          "recovered_share_pooled_by_se_gain": 1.0018440333976448,
+          "leaked_fraction_pooled": 0.9989429175475687
+        },
+        "ridge": {
+          "leaked_fraction": {
+            "mean": 0.9989429175475687,
+            "std_sample": 0.0011142627414265029
+          },
+          "mean_mass_leaked": {
+            "mean": 0.9381578355998889,
+            "std_sample": 0.004626854326937617
+          },
+          "rmse_leaky": {
+            "mean": 21.224123380598883,
+            "std_sample": 0.2669526077865948
+          },
+          "rmse_purged": {
+            "mean": 22.663927860165096,
+            "std_sample": 0.6015510987199316
+          },
+          "rmse_louo": {
+            "mean": 21.782254291014805,
+            "std_sample": 0.2626403743524354
+          },
+          "optimism_rmse": {
+            "mean": 0.558130910415926,
+            "std_sample": 0.008756115373316511
+          },
+          "recovered_share": {
+            "mean": 0.9627234206510588,
+            "std_sample": 0.01406920935817153
+          },
+          "n_straddling": {
+            "mean": 100.0,
+            "std_sample": 0.0
+          },
+          "recovered_share_pooled_by_se_gain": 0.9627993241222401,
+          "leaked_fraction_pooled": 0.9989429175475687
+        }
+      }
+    }
+  ],
+  "honest_paragraph": "On genuine C-MAPSS FD001 the leakage is total and, for a local model, the optimism is far larger than on the synthetic fleets, not smaller: at window length 30 / stride 5, 100.0% of test windows share raw cycles with training windows (mean leakage mass 0.985), and the random-split kNN score of 11.49 +/- 0.61 RMSE is optimistic by 11.32 +/- 0.42 RMSE against the leave-own-unit-out score of 22.81 +/- 0.54 for the identical test windows; at 20/5 the kNN optimism is 7.79 +/- 0.32 RMSE. The effect is strongly model-dependent: ridge regression on the same splits is optimistic by only 0.75 +/- 0.02 RMSE (30/5) and 0.56 +/- 0.01 RMSE (20/5), because a global linear model cannot exploit near-copy neighbours the way kNN does, so leakage optimism is a property of the split and the model together, not of the split alone. Two testbed behaviours change character on real data: purging, only mildly biased in the synthetic evaluation, collapses here (purged kNN RMSE 26.58 +/- 1.54 at 30/5, worse than the honest LOUO score), because at 100% leakage the purge deletes nearly all of the training data; and the removal replay recovers essentially all of the measured optimism (recovery share pooled by squared-error gain: 1.000 for kNN and 0.995 for ridge at 30/5, 1.002 for kNN and 0.963 for ridge at 20/5), leaving no measurable same-unit adjacency premium, which is expected when there are effectively no unleaked test windows to carry one. The near-duplicate channel never fired on the real data (0 edges); every one of the graph's edges is a true timestep overlap."
+}
