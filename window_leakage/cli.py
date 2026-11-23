@@ -91,6 +91,11 @@ def cmd_evaluate(args):
                 "mean_rmse_louo",
                 "mean_inflation_rmse",
                 "recovered_share",
+                "std_leaked_fraction",
+                "std_rmse_full",
+                "std_rmse_purged",
+                "std_rmse_louo",
+                "std_inflation_rmse",
             ]
         )
         for key in evaluation["configs"]:
@@ -106,6 +111,11 @@ def cmd_evaluate(args):
                     "%.4f" % row["mean_rmse_louo"],
                     "%.4f" % row["mean_inflation_rmse"],
                     "%.4f" % row["recovered_share"],
+                    "%.4f" % row["std_leaked_fraction"],
+                    "%.4f" % row["std_rmse_full"],
+                    "%.4f" % row["std_rmse_purged"],
+                    "%.4f" % row["std_rmse_louo"],
+                    "%.4f" % row["std_inflation_rmse"],
                 ]
             )
     with open(os.path.join(out_dir, "evaluation_summary.md"), "w") as fh:
@@ -113,26 +123,38 @@ def cmd_evaluate(args):
     with open(os.path.join(out_dir, "HEADLINE.md"), "w") as fh:
         fh.write("# Headline results\n\n")
         fh.write(
-            "Random 75/25 splits of sliding windows leak %.1f%% of test "
+            "Random 75/25 splits of sliding windows leak %.1f%% "
+            "(+/- %.1f) of test "
             "windows on average (pooled over %d seeded runs, 5 window "
             "geometries including a non-overlapping control). The "
             "overlap graph detects them at precision %.3f / recall "
             "%.3f; exact-duplicate counting recalls %.3f. The leaky "
-            "kNN RUL score is optimistic by %.2f RMSE (leaky %.2f vs "
-            "leave-own-unit-out %.2f; purged %.2f, unit-disjoint split "
+            "kNN RUL score is optimistic by %.2f (+/- %.2f) RMSE "
+            "(leaky %.2f (+/- %.2f) vs "
+            "leave-own-unit-out %.2f (+/- %.2f); purged %.2f "
+            "(+/- %.2f), unit-disjoint split "
             "reference %.2f), and per-component removal replay "
             "recovers %.1f%% of the MSE optimism, component by "
-            "component - the rest is the same-unit adjacency premium.\n"
+            "component - the rest is the same-unit adjacency premium. "
+            "The recovery share is pooled by total squared-error gain "
+            "across runs (total replay gain divided by total LOUO "
+            "squared-error gain), not a simple average of the "
+            "per-geometry shares.\n"
             % (
                 100.0 * headline["mean_leaked_fraction"],
+                100.0 * headline["std_leaked_fraction"],
                 evaluation["pooled"]["n_runs"],
                 headline["detection_precision"],
                 headline["detection_recall"],
                 headline["baseline_recall"],
                 headline["mean_inflation_rmse"],
+                headline["std_inflation_rmse"],
                 headline["mean_rmse_full"],
+                headline["std_rmse_full"],
                 headline["mean_rmse_louo"],
+                headline["std_rmse_louo"],
                 headline["mean_rmse_purged"],
+                headline["std_rmse_purged"],
                 headline["mean_reference_rmse"],
                 100.0 * headline["mean_recovered_share"],
             )

@@ -17,11 +17,11 @@ Headline quantities, all measured against planted ground truth:
 
 from .cartographer import audit_split
 from .generate import generate_fleet
-from .models import mean, rmse
+from .models import mean, rmse, std
 from .predictor import KNNRegressor
 from .windows import build_windows, random_split, unit_disjoint_split
 
-EVAL_SEEDS = (101, 102, 103, 104)
+EVAL_SEEDS = tuple(range(101, 125))
 # The last geometry is the control: stride == length, so windows tile
 # without overlapping and shared-timestep leakage is zero by
 # construction. Any remaining gap to the unit-disjoint reference is
@@ -83,10 +83,15 @@ def run_evaluation(seeds=EVAL_SEEDS, configs=CONFIGS, n_units=N_UNITS):
             "stride": stride,
             "n_runs": len(group),
             "mean_leaked_fraction": mean([r["leaked_fraction"] for r in group]),
+            "std_leaked_fraction": std([r["leaked_fraction"] for r in group]),
             "mean_inflation_rmse": mean([r["inflation_rmse"] for r in group]),
+            "std_inflation_rmse": std([r["inflation_rmse"] for r in group]),
             "mean_rmse_full": mean([r["rmse_full"] for r in group]),
+            "std_rmse_full": std([r["rmse_full"] for r in group]),
             "mean_rmse_purged": mean([r["rmse_purged"] for r in group]),
+            "std_rmse_purged": std([r["rmse_purged"] for r in group]),
             "mean_rmse_louo": mean([r["rmse_louo"] for r in group]),
+            "std_rmse_louo": std([r["rmse_louo"] for r in group]),
             "recovered_share": (gain / total) if total > 1e-9 else 0.0,
         }
 
@@ -103,6 +108,7 @@ def run_evaluation(seeds=EVAL_SEEDS, configs=CONFIGS, n_units=N_UNITS):
     pooled = {
         "n_runs": len(runs),
         "mean_leaked_fraction": mean([r["leaked_fraction"] for r in runs]),
+        "std_leaked_fraction": std([r["leaked_fraction"] for r in runs]),
         "detection_precision": (
             total_tp / float(total_tp + total_fp) if (total_tp + total_fp) else 1.0
         ),
@@ -113,10 +119,14 @@ def run_evaluation(seeds=EVAL_SEEDS, configs=CONFIGS, n_units=N_UNITS):
             total_baseline_hits / float(total_leaked) if total_leaked else 0.0
         ),
         "mean_inflation_rmse": mean([r["inflation_rmse"] for r in runs]),
+        "std_inflation_rmse": std([r["inflation_rmse"] for r in runs]),
         "mean_inflation_purged": mean([r["inflation_purged"] for r in runs]),
         "mean_rmse_full": mean([r["rmse_full"] for r in runs]),
+        "std_rmse_full": std([r["rmse_full"] for r in runs]),
         "mean_rmse_purged": mean([r["rmse_purged"] for r in runs]),
+        "std_rmse_purged": std([r["rmse_purged"] for r in runs]),
         "mean_rmse_louo": mean([r["rmse_louo"] for r in runs]),
+        "std_rmse_louo": std([r["rmse_louo"] for r in runs]),
         "mean_reference_rmse": mean([r["reference_rmse"] for r in runs]),
         "recovered_share": (
             total_gain / total_louo_gain if total_louo_gain > 1e-9 else 0.0
@@ -154,6 +164,11 @@ def headline_numbers(evaluation):
     control = per_config.get("20x20", fallback)
     return {
         "mean_leaked_fraction": pooled["mean_leaked_fraction"],
+        "std_leaked_fraction": pooled["std_leaked_fraction"],
+        "std_inflation_rmse": pooled["std_inflation_rmse"],
+        "std_rmse_full": pooled["std_rmse_full"],
+        "std_rmse_purged": pooled["std_rmse_purged"],
+        "std_rmse_louo": pooled["std_rmse_louo"],
         "detection_precision": pooled["detection_precision"],
         "detection_recall": pooled["detection_recall"],
         "baseline_recall": pooled["baseline_recall"],

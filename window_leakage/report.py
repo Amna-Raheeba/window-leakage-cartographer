@@ -88,8 +88,12 @@ def render_evaluation_summary(evaluation, headline):
     )
     lines.append("")
     lines.append(
-        "- Test windows leaked by the random split: %.1f%% on average."
-        % (100.0 * headline["mean_leaked_fraction"])
+        "- Test windows leaked by the random split: %.1f%% on average "
+        "(+/- %.1f across runs)."
+        % (
+            100.0 * headline["mean_leaked_fraction"],
+            100.0 * headline["std_leaked_fraction"],
+        )
     )
     lines.append(
         "- Overlap-graph detection: precision %.3f / recall %.3f; the "
@@ -101,21 +105,31 @@ def render_evaluation_summary(evaluation, headline):
         )
     )
     lines.append(
-        "- Score optimism: leaky RMSE %.2f vs leave-own-unit-out %.2f "
-        "(purged %.2f, unit-disjoint split reference %.2f) - %.2f "
+        "- Score optimism: leaky RMSE %.2f (+/- %.2f) vs "
+        "leave-own-unit-out %.2f (+/- %.2f) "
+        "(purged %.2f (+/- %.2f), unit-disjoint split reference %.2f) "
+        "- %.2f (+/- %.2f) "
         "RMSE, %.1f%% of the honest score."
         % (
             headline["mean_rmse_full"],
+            headline["std_rmse_full"],
             headline["mean_rmse_louo"],
+            headline["std_rmse_louo"],
             headline["mean_rmse_purged"],
+            headline["std_rmse_purged"],
             headline["mean_reference_rmse"],
             headline["mean_inflation_rmse"],
+            headline["std_inflation_rmse"],
             100.0 * headline["inflation_pct"],
         )
     )
     lines.append(
         "- Per-component removal replay recovers %.1f%% of the MSE "
-        "optimism; the remainder is the same-unit adjacency premium."
+        "optimism; the remainder is the same-unit adjacency premium. "
+        "The recovery share is pooled by total squared-error gain "
+        "across runs (total replay gain divided by total LOUO "
+        "squared-error gain), not a simple average of the "
+        "per-geometry shares."
         % (100.0 * headline["mean_recovered_share"])
     )
     lines.append(
@@ -128,12 +142,15 @@ def render_evaluation_summary(evaluation, headline):
     for key in evaluation["configs"]:
         row = evaluation["per_config"][key]
         lines.append(
-            "- %s: leaked %.1f%%, optimism %.2f RMSE, replay recovery "
+            "- %s: leaked %.1f%% (+/- %.1f), optimism %.2f (+/- %.2f) "
+            "RMSE, replay recovery "
             "%.1f%%."
             % (
                 key,
                 100.0 * row["mean_leaked_fraction"],
+                100.0 * row["std_leaked_fraction"],
                 row["mean_inflation_rmse"],
+                row["std_inflation_rmse"],
                 100.0 * row["recovered_share"],
             )
         )
