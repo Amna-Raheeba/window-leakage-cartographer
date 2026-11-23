@@ -75,29 +75,34 @@ construction.
 
 ## 5. Headline results (measured)
 
-Pooled over 20 seeded runs (4 seeds × 5 geometries, random 75/25
+Pooled over 120 seeded runs (24 seeds × 5 geometries, random 75/25
 splits):
 
-- **76.7% of test windows leak** on average — 94–100% at every
-  overlapping geometry, 0.0% at the control, as constructed. Mean
-  leakage mass among leaked windows is 0.602.
+- **76.1% of test windows leak** on average (± 38.3 pooled across
+  all runs; per geometry 89.6–99.9% at every overlapping geometry
+  with per-geometry spread at most ± 4.1, 0.0% at the control, as
+  constructed). Mean
+  leakage mass among leaked windows is 0.604.
 - **The overlap graph detects the planted leakage at precision
   1.000 / recall 1.000.** The exact-duplicate-counting baseline —
   the standard quick contamination check — has recall **0.000**: a
   window shifted by one timestep is never an exact duplicate, so the
   hash check is structurally blind to partial overlap.
-- **The leaky score is optimistic by 0.85 RMSE** (leaky 14.01 vs
-  LOUO 14.87; purged 14.88, unit-disjoint split reference 14.72) —
-  5.7% of the honest score, pooled. Per geometry the optimism is
-  1.68 RMSE at 20×5, 1.08 at 10×5, 0.71 at 30×10, 0.35 at 20×10.
-- **Removal replay recovers 78.0% of the MSE optimism**, component
-  by component (60.0% at 10×5, 96.3% at 20×5, 57.3% at 20×10, 105.8%
+- **The leaky score is optimistic by 1.01 ± 0.84 RMSE** (leaky
+  13.64 vs
+  LOUO 14.65; purged 15.04, unit-disjoint split reference 14.59) —
+  6.9% of the honest score, pooled. Per geometry the optimism is
+  1.94 RMSE at 20×5, 1.27 at 10×5, 0.69 at 30×10, 0.73 at 20×10.
+- **Removal replay recovers 86.4% of the MSE optimism**, component
+  by component (78.0% at 10×5, 98.1% at 20×5, 83.0% at 20×10, 100.5%
   at 30×10 — slightly over 100% there because kNN neighbour sets
   interact across components; the overshoot is reported, not
-  clipped). Per-window MSE optimism is 22.70 for leaked test windows
-  vs 4.60 for unleaked ones.
+  clipped). The pooled share is computed by total squared-error
+  gain across runs, not as a simple average of the per-geometry
+  shares. Per-window MSE optimism is 27.09 for leaked test windows
+  vs 9.26 for unleaked ones.
 - **The control proves the attribution is specific:** at 20×20 the
-  leaky score is still optimistic by 0.45 RMSE, but the replay
+  leaky score is still optimistic by 0.43 RMSE, but the replay
   attributes it to *no* component (recovery 0.0%) — that residue is
   pure same-unit adjacency, visible only against the LOUO score.
 
@@ -128,12 +133,12 @@ window's neighbours nearly determine its label (test RMSE 35.00 →
   only built within a unit; duplicated trajectories across units
   (a real failure mode in scraped datasets) are not modelled.
 - **Purging is not a free fix.** At 20×10 the purged score is
-  slightly *better* than the leaky one (−0.05 RMSE inflation):
+  *worse* than the leaky one by 0.81 RMSE on average:
   purging also removes legitimate neighbours and shrinks the
   training set, which can help or hurt by chance. The LOUO score,
   not the purged score, is the ground truth used for the headline.
 - **The adjacency premium is real and unfixable by auditing.** Even
-  with zero shared timesteps, a random split scored 0.45 RMSE
+  with zero shared timesteps, a random split scored 0.43 RMSE
   optimistic in the control geometry. If the claim is "generalises
   to new units", only a unit-disjoint split supports it.
 

@@ -130,7 +130,7 @@ def tab_components():
 
 
 def tab_evaluation():
-    st.subheader("Stored evaluation (4 seeds x 5 geometries)")
+    st.subheader("Stored evaluation (24 seeds x 5 geometries)")
     payload = load_evaluation()
     if payload is None:
         st.write("No stored results found. Run: "
