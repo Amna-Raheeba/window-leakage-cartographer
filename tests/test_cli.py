@@ -28,4 +28,4 @@ def test_cli_evaluate_writes_files(tmp_path):
     with open(os.path.join(out_dir, "evaluation.json")) as fh:
         payload = json.load(fh)
     assert "headline" in payload and "per_config" in payload
-    assert payload["n_runs"] == 20
+    assert payload["n_runs"] == 120

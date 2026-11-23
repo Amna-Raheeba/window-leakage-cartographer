@@ -15,7 +15,8 @@ def test_stored_results_exist_and_parse():
     for key in ("seeds", "configs", "n_runs", "runs", "per_config",
                 "pooled", "headline"):
         assert key in payload, key
-    assert payload["n_runs"] == 20
+    assert payload["n_runs"] == 120
+    assert payload["seeds"] == list(range(101, 125))
 
 
 def test_stored_headline_keys():
@@ -40,6 +41,22 @@ def test_stored_headline_keys():
         "leaked_control",
     ):
         assert key in headline, key
+
+
+def test_stored_spread_fields():
+    payload = _load()
+    for key in (
+        "std_leaked_fraction",
+        "std_inflation_rmse",
+        "std_rmse_full",
+        "std_rmse_purged",
+        "std_rmse_louo",
+    ):
+        assert key in payload["pooled"], key
+        assert payload["pooled"][key] >= 0.0
+        for row in payload["per_config"].values():
+            assert key in row, key
+            assert row[key] >= 0.0
 
 
 def test_stored_headline_values_sane():
